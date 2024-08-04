@@ -477,3 +477,77 @@ ul li {
   border-radius: 50%; /* Hace el borde circular */
   border: 5px solid #000; /* Agrega un borde de 5px de grosor y color negro */
 }
+
+.centered-text {
+  text-align: center;
+  font-size: 0.9em;
+  margin: 0 auto;
+  max-width: 550px; /* Ajusta este valor según tus necesidades */
+  line-height: 1; /* Ajusta el espacio entre líneas */
+  font-family: 'Forte', cursive; /* Usar fuente Forte */
+  color: #b33a3a; /* Color rojo oscuro */
+}
+
+/* Estilo base para todos los corazones */
+.heart {
+  position: absolute; /* Posiciona el corazón de manera absoluta dentro del contenedor */
+  display: inline-block; /* Muestra el corazón en línea con otros elementos, pero permite establecer un tamaño */
+  width: 30px; /* Ancho del corazón */
+  height: 30px; /* Altura del corazón */
+  background: red;  /* Color de fondo rojo para el corazón */
+  transform: rotate(45deg); /* Rota el corazón 45 grados para formar una figura de corazón */
+  animation: beat 0.7s linear infinite; /* Aplica la animación 'beat' durante 0.7 segundos, de forma continua y lineal */
+  z-index: 500; /* Asegura que el corazón esté por debajo de la imagen */
+}
+
+/* Corazón 1 */
+.heart1 {
+  left: 30%; /* Posiciona el primer corazón a la izquierda en un 30% del contenedor */
+  bottom: 10%; /* Posiciona el primer corazón en la parte inferior del contenedor */
+}
+
+/* Corazón 2 */
+.heart2 {
+  left: 50%; /* Posiciona el segundo corazón a la izquierda en un 50% del contenedor */
+  bottom: 10%; /* Posiciona el segundo corazón en la parte inferior del contenedor */
+  animation-delay: 0.2s; /* Retrasa la animación del segundo corazón para que lata en un momento distinto */
+}
+
+/* Corazón 3 */
+.heart3 {
+  left: 70%; /* Posiciona el tercer corazón a la izquierda en un 70% del contenedor */
+  bottom: 10%; /* Posiciona el tercer corazón en la parte inferior del contenedor */
+  animation-delay: 0.4s; /* Retrasa la animación del tercer corazón para que lata en un momento distinto */
+}
+
+/* Definición del primer pseudo-elemento ::before del corazón */
+.heart::before {
+  position: absolute; /* Posiciona el pseudo-elemento de manera absoluta */
+  content: ""; /* Contenido vacío para crear un espacio en blanco */
+  width: 30px; /* Ancho del pseudo-elemento */
+  height: 30px; /* Altura del pseudo-elemento */
+  background: red;  /* Color de fondo rojo */
+  border-radius: 100%; /* Bordes redondeados al 100% para crear un círculo */
+  top: -50%; /* Posiciona el psdo-elemento 50% por encima del contenedor padre */
+  animation: beat 0.7s linear infinite; /* Aplica la animación 'beat' igual que el elemento principal */
+}
+
+/* Definición del segundo pseudo-elemento ::after del corazón */
+.heart::after {
+  position: absolute; /* Posiciona el pseudo-elemento de manera absoluta */
+  content: ""; /* Contenido vacío */
+  width: 30px; /* Ancho del pseudo-elemento */
+  height: 30px; /* Altura del pseudo-elemento */
+  background: red; /* Color de fondo rojo */
+  border-radius: 100%; /* Bordes redondeados al 100% para crear un círculo */
+  top: 0%; /* Posiciona el pseudo-elemento al nivel del contenedor padre */
+  left: -50%; /* Posiciona el pseudo-elemento 50% a la izquierda del contenedor padre */
+}
+
+/* Animación que hace que el corazón lata */
+@keyframes beat {
+  20%, 40% { /* En el 20% y 40% de la animación */
+    height: 60px; /* Aumenta la altura del corazón a 40px */
+    width: 60px; /* Aumenta el ancho del corazón a 40px */
+  }
+}
